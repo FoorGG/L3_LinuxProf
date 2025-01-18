@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+ENV['VAGRANT_SERVER_URL'] = 'http://vagrant.elab.pro'
+Vagrant.configure("2") do |config|
+  config.vm.network "public_network"
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.define "vld01ngwebh1" do |vld01ngwebh1|
+    vld01ngwebh1.vm.hostname = "vld01-ngweb-h1"
+    vld01ngwebh1.vm.provider "virtualbox" do |customize|
+      customize.memory = 1024
+      customize.cpus = 1
+	end
+  end
+end
