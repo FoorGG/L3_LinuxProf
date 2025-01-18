@@ -8,6 +8,7 @@ String passwd =  generatePassword(25)
 def pswd = new File('/tmp/pswd.txt')
 pswd.createNewFile()
 pswd.withWriter {currentObject ->
+    currentObject.writeLine("${user}")
     currentObject.writeLine "${passwd}"
 }
 println("Password for ${user}: \"${passwd}\"")
