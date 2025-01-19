@@ -1,0 +1,11 @@
+---
+- name: Installing Packages
+  hosts: all
+  become: true
+  become_user: root
+
+  roles:
+    - common:
+    - update_reppo:
+    - install_nginx:
+    - deploy_nginx:

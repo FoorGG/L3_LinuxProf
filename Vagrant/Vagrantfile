@@ -10,5 +10,9 @@ Vagrant.configure("2") do |config|
       customize.memory = 1024
       customize.cpus = 1
 	end
+    vld01ngwebh1.vm.provision "ansible" do |ansible|
+      ansible.playbook = "../Ansible/Main.yml"
+    end
+#    vld01ngwebh1.vm.provision "shell", path: "update_kernel.sh"
   end
 end
