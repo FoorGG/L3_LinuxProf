@@ -1,11 +1,14 @@
 ---
-- name: Installing Packages
-  hosts: all
-  become: true
+- name: Configuring VM
+  hosts: web
+  become: yes
   become_user: root
+  gather_facts: true
 
   roles:
-    - common:
-    - update_reppo:
-    - install_nginx:
-    - deploy_nginx:
+    - common
+    - update_reppo
+    - install_nginx
+    - deploy_nginx
+
+...
