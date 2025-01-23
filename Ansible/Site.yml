@@ -1,14 +1,15 @@
 ---
 - name: Configuring VM
-  hosts: web
+  hosts:
+    - jenkins
+#    - web
   become: yes
   become_user: root
   gather_facts: true
 
   roles:
-    - common
-    - update_reppo
-    - install_nginx
-    - deploy_nginx
+    - role: common
+    - role: install_nginx
+    - role: deploy_nginx
 
 ...
