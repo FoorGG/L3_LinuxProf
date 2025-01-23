@@ -1,0 +1,5 @@
+---
+- name: Nginx Reload
+  ansible.builtin.systemd_service:
+    name: nginx
+    state: restarted

@@ -1,0 +1,10 @@
+---
+
+- name: Deploy NGING config file
+  ansible.builtin.template:
+    src: confd.conf.j2
+    dest: /etc/nginx/sites-enabled/{{ inventory_hostname  }}.conf
+  notify:
+    - Nginx Reload
+
+...

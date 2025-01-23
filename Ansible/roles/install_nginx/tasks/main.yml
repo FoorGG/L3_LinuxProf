@@ -1,0 +1,12 @@
+---
+
+- name: Install Nginx
+  ansible.builtin.apt:
+    update_cache: true
+    pkg:
+      - nginx
+    state: present
+  notify:
+    - Start Nginx
+
+...

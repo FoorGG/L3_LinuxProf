@@ -1,0 +1,19 @@
+---
+
+- name: Update && Upgrade apt packages
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+    only_upgrade: true
+
+- name: Install util btop
+  ansible.builtin.apt:
+    name: btop
+    state: present
+
+- name: Install util iftop
+  ansible.builtin.apt:
+    name: iftop
+    state: present
+
+...
