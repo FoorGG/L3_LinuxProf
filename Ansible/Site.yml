@@ -2,7 +2,7 @@
 - name: Configuring VM
   hosts:
     - jenkins
-#    - web
+    - web
   become: yes
   become_user: root
   gather_facts: true
